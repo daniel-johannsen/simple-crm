@@ -10,7 +10,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class DialogEditUserComponent implements OnInit {
 
-  user: User;
+  user: User = new User();
   loading = false;
   birthDate: Date;
   userId:string;
