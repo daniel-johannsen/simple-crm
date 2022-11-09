@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/models/user.class';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -13,6 +14,7 @@ export class DialogAddUserComponent implements OnInit {
   user = new User();
   birthDate: Date;
   loading = false;
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   constructor(private firestore: AngularFirestore, public dialogRef: MatDialogRef<DialogAddUserComponent>) { }
 
