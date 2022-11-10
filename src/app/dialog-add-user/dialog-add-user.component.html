@@ -71,6 +71,20 @@
                 <!-- <mat-hint>Please enter a Name</mat-hint> -->
             </mat-form-field>
         </div>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Category</mat-label>
+                <mat-select required [(ngModel)]="user.category" name="category" multiple>
+                    <mat-option value="Aktien">Aktien</mat-option>
+                    <mat-option value="ETF">ETF</mat-option>
+                    <mat-option value="Krypto">Krypto</mat-option>
+                    <mat-option value="Immobilen">Immobilen</mat-option>
+                    <mat-option value="Anleihen">Anleihen</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
     </div>
     <div mat-dialog-actions>
         <button [disabled]="loading" mat-button (click)="dialogRef.close()">Cancel</button>
