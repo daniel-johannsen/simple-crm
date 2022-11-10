@@ -4,6 +4,7 @@
     </button>
     <mat-menu #userMenu="matMenu">
         <button mat-menu-item (click)="editUser()">Edit</button>
+        <button mat-menu-item (click)="deleteUser()">Delete</button>
     </mat-menu>
     <img [src]="user.gender">
     <div class="user-details">
