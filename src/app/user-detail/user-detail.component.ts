@@ -7,6 +7,8 @@ import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-a
 import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
 import {Location} from '@angular/common';
 
+//The module \"\"@angular/fire/compat/firestore\"\" has no exported member \"AngularFirestore\".
+
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
