@@ -1,0 +1,24 @@
+<div class="dialog-container">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <h1 mat-dialog-title>Edit Assets</h1>
+    <div mat-dialog-content>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Category</mat-label>
+                <mat-select required [(ngModel)]="user.category" name="category" multiple>
+                    <mat-option value="Aktien">Aktien</mat-option>
+                    <mat-option value="ETF">ETF</mat-option>
+                    <mat-option value="Krypto">Krypto</mat-option>
+                    <mat-option value="Immobilen">Immobilen</mat-option>
+                    <mat-option value="Anleihen">Anleihen</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div mat-dialog-actions>
+        <button [disabled]="loading" mat-button (click)="dialogRef.close()">Cancel</button>
+        <button [disabled]="loading" mat-button cdkFocusInitial (click)="saveUser()">Save</button>
+    </div>
+</div>

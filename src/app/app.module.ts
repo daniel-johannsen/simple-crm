@@ -32,6 +32,7 @@ import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-ad
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import { DialogEditAssetsComponent } from './dialog-edit-assets/dialog-edit-assets.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {MatSelectModule} from '@angular/material/select';
     DialogAddUserComponent,
     UserDetailComponent,
     DialogEditAddressComponent,
-    DialogEditUserComponent
+    DialogEditUserComponent,
+    DialogEditAssetsComponent
   ],
   imports: [
     BrowserModule,

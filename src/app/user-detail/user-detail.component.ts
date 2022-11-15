@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
 import {Location} from '@angular/common';
+import { DialogEditAssetsComponent } from '../dialog-edit-assets/dialog-edit-assets.component';
 
 //The module \"\"@angular/fire/compat/firestore\"\" has no exported member \"AngularFirestore\".
 
@@ -57,6 +58,13 @@ export class UserDetailComponent implements OnInit {
 
   editUser() {
     const dialog = this.dialogRef.open(DialogEditUserComponent);
+    dialog.componentInstance.user = new User(this.user.toJSON());
+    dialog.componentInstance.userId = this.userId;
+  }
+
+
+  editAssets() {
+    const dialog = this.dialogRef.open(DialogEditAssetsComponent);
     dialog.componentInstance.user = new User(this.user.toJSON());
     dialog.componentInstance.userId = this.userId;
   }

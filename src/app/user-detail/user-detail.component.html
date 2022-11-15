@@ -25,3 +25,18 @@
         {{ user.street }} <br> {{ user.zipCode }} {{ user.city }}
     </mat-card-content>
 </mat-card>
+
+<mat-card class="mt-32">
+    <button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="assetsMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #assetsMenu="matMenu">
+        <button mat-menu-item (click)="editAssets()">Edit</button>
+    </mat-menu>
+    <mat-card-title>Category</mat-card-title>
+    <mat-card-content>
+        <ul>
+            <li *ngFor="let asset of user.category; let i = index;">{{ user.category[i] }}</li>
+        </ul>
+    </mat-card-content>
+</mat-card>

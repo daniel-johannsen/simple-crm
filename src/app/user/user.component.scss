@@ -46,3 +46,9 @@ mat-card {
         }
     }
 }
+
+@media(max-width: 600px) {
+    td {
+        font-size: 12px;
+    }
+}
