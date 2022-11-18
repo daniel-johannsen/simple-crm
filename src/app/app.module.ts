@@ -33,6 +33,9 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { DialogEditAssetsComponent } from './dialog-edit-assets/dialog-edit-assets.component';
+import { CategoryChartComponent } from './category-chart/category-chart.component';
+import { AgeChartComponent } from './age-chart/age-chart.component';
+import { GenderChartComponent } from './gender-chart/gender-chart.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { DialogEditAssetsComponent } from './dialog-edit-assets/dialog-edit-asse
     UserDetailComponent,
     DialogEditAddressComponent,
     DialogEditUserComponent,
-    DialogEditAssetsComponent
+    DialogEditAssetsComponent,
+    CategoryChartComponent,
+    AgeChartComponent,
+    GenderChartComponent
   ],
   imports: [
     BrowserModule,
