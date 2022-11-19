@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 import { getRelativePosition } from 'chart.js/helpers';
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 @Component({
   selector: 'app-category-chart',
@@ -19,13 +20,25 @@ export class CategoryChartComponent implements OnInit {
   krypto = 0;
   realEstate = 0;
   bonds = 0;
+  
 
   constructor(private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
     this.getUser();
-    this.checkAllUsers();
   }
+
+  
+  async getUser() {
+      const db = getFirestore();
+      const querySnapshot = await getDocs(collection(db, 'users'));
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        this.allUsers.push(doc.data());
+      });
+      console.log(this.allUsers);
+      this.checkAllUsers();
+    }
 
 
   checkAllUsers() {
@@ -34,7 +47,7 @@ export class CategoryChartComponent implements OnInit {
     this.checkUsersKrypto();
     this.checkUsersRealEstate();
     this.checkUsersBonds();
-    this.createChar();
+    this.createChart();
   }
 
 
@@ -86,32 +99,18 @@ export class CategoryChartComponent implements OnInit {
     });
     console.log('bonds', this.bonds);
   }
-
-  
-  getUser() {
-      this.firestore
-        .collection('users')
-        .valueChanges({idField: 'customIdName'})
-        .subscribe((changes: any) => {
-          console.log('Recived changes from DB', changes);
-          this.allUsers = changes;
-        });
-
-      console.log('allUsers', this.allUsers);
-    }
   
 
-
-  createChar() {
+  createChart() {
     let canvas = <HTMLCanvasElement> document.getElementById('myChart'); // node
     let ctx: any = canvas.getContext('2d'); // 2d context
   
     let myChart = new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
             labels: ['Stocks', 'ETF', 'Krypto', 'Real-Estate', 'Bonds'],
             datasets: [{
-                label: '# of all Assets',
+                label: 'of all Users',
                 data: [this.stocks, this.etf, this.krypto, this.realEstate, this.bonds],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -135,7 +134,14 @@ export class CategoryChartComponent implements OnInit {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    ticks: {
+                      display: false
+                    },
+                    grid: {
+                      display: false,
+                      drawTicks: false
+                    }
                 }
             }
         }
