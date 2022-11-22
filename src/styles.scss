@@ -39,3 +39,31 @@ body {
     height: 400px;
     margin-bottom: 100px;
 }
+
+.log-in-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    mat-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        width: 248px;
+    }
+    .mat-raised-btn {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .btn {
+        display: flex;
+        justify-content: center;
+    }
+    .info-txt {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+}

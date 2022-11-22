@@ -1,0 +1,16 @@
+<div class="log-in-container">
+    <mat-card>
+        <h1 mat-dialog-title>Home</h1>
+
+        <button class="mat-raised-btn" mat-raised-button color="primary" routerLink="/signup">Signup</button>
+        <button class="mat-raised-btn" mat-raised-button color="primary" routerLink="/login">Login</button>
+        <button class="mat-raised-btn" mat-raised-button color="primary" routerLink="/dashboard">Dashboard</button>
+        <div class="info-txt" *ngIf="(afAuth.user | async)">User is logged in
+            <br>
+            <div class="btn">
+                <button class="mat-raised-btn" mat-raised-button color="primary" (click)="logout()">Log out</button>
+            </div>
+        </div>
+        <div class="info-txt" *ngIf="!(afAuth.user | async)">User is logged out</div>
+    </mat-card>
+</div>

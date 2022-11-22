@@ -36,6 +36,9 @@ import { DialogEditAssetsComponent } from './dialog-edit-assets/dialog-edit-asse
 import { CategoryChartComponent } from './category-chart/category-chart.component';
 import { AgeChartComponent } from './age-chart/age-chart.component';
 import { GenderChartComponent } from './gender-chart/gender-chart.component';
+import { SingnUpComponent } from './sign-up/sign-up.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { GenderChartComponent } from './gender-chart/gender-chart.component';
     DialogEditAssetsComponent,
     CategoryChartComponent,
     AgeChartComponent,
-    GenderChartComponent
+    GenderChartComponent,
+    SingnUpComponent,
+    LogInComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
