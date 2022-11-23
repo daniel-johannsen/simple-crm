@@ -143,7 +143,8 @@ export class CategoryChartComponent implements OnInit {
                       drawTicks: false
                     }
                 }
-            }
+            },
+            responsive: true
         }
     });
 

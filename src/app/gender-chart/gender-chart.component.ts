@@ -95,7 +95,8 @@ export class GenderChartComponent implements OnInit {
                         drawTicks: false
                       }
                   }
-              }
+              },
+              responsive: true
           }
       });
   

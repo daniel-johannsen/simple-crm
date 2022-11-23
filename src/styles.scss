@@ -34,9 +34,11 @@ body {
 }
 
 #divChart {
-    display: block;
-    width: 400px;
-    height: 400px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 95vw;
+    height: 70vh;
     margin-bottom: 100px;
 }
 
@@ -65,5 +67,26 @@ body {
     .info-txt {
         margin-top: 8px;
         margin-bottom: 8px;
+    }
+}
+
+.container {
+    min-height: 100vh;
+    padding-top: 40px;
+    padding-left: 130px;
+    padding-right: 130px;
+    a {
+        color: rgb(63, 81, 181);
+    }
+}
+
+@media(max-width: 600px) {
+    #divChart {
+        height: 35vh;
+    }
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow-x: hidden;
     }
 }

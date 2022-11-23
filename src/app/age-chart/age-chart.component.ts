@@ -117,7 +117,8 @@ export class AgeChartComponent implements OnInit {
                         drawTicks: false
                       }
                   }
-              }
+              },
+              responsive: true
           }
       });
   

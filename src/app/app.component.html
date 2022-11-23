@@ -5,12 +5,16 @@
         </div>
 
         <ul class="menu-items">
+            <li [routerLink]="['/home']" routerLinkActive="router-link-active">
+                <mat-icon>home</mat-icon>Home</li>
             <li [routerLink]="['/dashboard']" routerLinkActive="router-link-active">
                 <mat-icon>fact_check</mat-icon>Dashboard</li>
             <li [routerLink]="['/user']" routerLinkActive="router-link-active">
-                <mat-icon>perm_identity</mat-icon>User</li>
-            <li [routerLink]="['/home']" routerLinkActive="router-link-active">
-                <mat-icon>perm_identity</mat-icon>Home</li>
+                <mat-icon>person</mat-icon>User</li>
+            <li [routerLink]="['/imprint']" routerLinkActive="router-link-active">
+                <mat-icon>info</mat-icon>Imprint</li>
+            <li [routerLink]="['/privacy-policy']" routerLinkActive="router-link-active">
+                <mat-icon>cookie</mat-icon>Privacy Policy</li>
         </ul>
 
     </mat-drawer>

@@ -47,8 +47,19 @@ mat-card {
     }
 }
 
+p {
+    width: 100%;
+    text-align: center;
+    display: none;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 @media(max-width: 600px) {
     td {
         font-size: 12px;
+    }
+    p {
+        display: block;
     }
 }

@@ -39,6 +39,8 @@ import { GenderChartComponent } from './gender-chart/gender-chart.component';
 import { SingnUpComponent } from './sign-up/sign-up.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { HomeComponent } from './home/home.component';
+import { ImprintComponent } from './imprint/imprint.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { HomeComponent } from './home/home.component';
     GenderChartComponent,
     SingnUpComponent,
     LogInComponent,
-    HomeComponent
+    HomeComponent,
+    ImprintComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,
