@@ -28,6 +28,7 @@ export class UserComponent implements OnInit {
       });
       
   }
+  
 
   openDialog() {
     this.dialogRef.open(DialogAddUserComponent);

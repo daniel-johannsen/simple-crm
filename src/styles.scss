@@ -43,9 +43,12 @@ body {
 }
 
 .log-in-container {
+    min-height: calc(100vh - 72px);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(240, 240, 240);
     mat-card {
         display: flex;
         flex-direction: column;

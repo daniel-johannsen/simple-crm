@@ -5,16 +5,18 @@
         </div>
 
         <ul class="menu-items">
-            <li [routerLink]="['/home']" routerLinkActive="router-link-active">
+            <li [routerLink]="['/home']" *ngIf="!(afAuth.user | async)" routerLinkActive="router-link-active">
                 <mat-icon>home</mat-icon>Home</li>
-            <li [routerLink]="['/dashboard']" routerLinkActive="router-link-active">
+            <li [routerLink]="['/dashboard']" *ngIf="(afAuth.user | async)" routerLinkActive="router-link-active" (click)="drawer.toggle()">
                 <mat-icon>fact_check</mat-icon>Dashboard</li>
-            <li [routerLink]="['/user']" routerLinkActive="router-link-active">
+            <li [routerLink]="['/user']" *ngIf="(afAuth.user | async)" routerLinkActive="router-link-active" (click)="drawer.toggle()">
                 <mat-icon>person</mat-icon>User</li>
-            <li [routerLink]="['/imprint']" routerLinkActive="router-link-active">
+            <li [routerLink]="['/imprint']" *ngIf="(afAuth.user | async)" routerLinkActive="router-link-active" (click)="drawer.toggle()">
                 <mat-icon>info</mat-icon>Imprint</li>
-            <li [routerLink]="['/privacy-policy']" routerLinkActive="router-link-active">
+            <li [routerLink]="['/privacy-policy']" *ngIf="(afAuth.user | async)" routerLinkActive="router-link-active" (click)="drawer.toggle()">
                 <mat-icon>cookie</mat-icon>Privacy Policy</li>
+            <li *ngIf="(afAuth.user | async)" (click)="logout(); drawer.toggle()">
+                <mat-icon>logout</mat-icon>Logout</li>
         </ul>
 
     </mat-drawer>
